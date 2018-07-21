@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamCareer", "EpamCareer\EpamCareer.csproj", "{BAE0FE37-06DC-43CB-8E81-4DAA99086B9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamCareer.Core", "EpamCareer.Core\EpamCareer.Core.csproj", "{13D18AA4-DAF8-4BF9-85C3-96D7DC178330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamCareer.Tests", "EpamCareer.Tests\EpamCareer.Tests.csproj", "{FB0399C9-4972-43DB-8D5F-EAD747BABABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BAE0FE37-06DC-43CB-8E81-4DAA99086B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAE0FE37-06DC-43CB-8E81-4DAA99086B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAE0FE37-06DC-43CB-8E81-4DAA99086B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D18AA4-DAF8-4BF9-85C3-96D7DC178330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D18AA4-DAF8-4BF9-85C3-96D7DC178330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D18AA4-DAF8-4BF9-85C3-96D7DC178330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D18AA4-DAF8-4BF9-85C3-96D7DC178330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB0399C9-4972-43DB-8D5F-EAD747BABABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0399C9-4972-43DB-8D5F-EAD747BABABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0399C9-4972-43DB-8D5F-EAD747BABABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0399C9-4972-43DB-8D5F-EAD747BABABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
