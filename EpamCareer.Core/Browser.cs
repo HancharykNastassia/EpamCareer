@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 using System;
 
 namespace EpamCareer.Core
@@ -10,10 +9,18 @@ namespace EpamCareer.Core
     private static Browser currentInstance;
     public static Browser Instance => currentInstance ?? (currentInstance = new Browser());
 
+    public string timeout;
+
+    private string browserType;
+    private BrowserType type;
+
     private Browser()
     {
-      Driver = new FirefoxDriver();
-      Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+      browserType = Configuration.Browser;
+      timeout = Configuration.Timeout;
+
+      Enum.TryParse(browserType, out type);
+      Driver = BrowserFactory.GetDriver(type, Convert.ToInt32(timeout));
     }
 
     public static void NavigateTo(string url)
@@ -29,6 +36,7 @@ namespace EpamCareer.Core
     public static void Quit()
     {
       Instance.Driver.Quit();
+      currentInstance = null;
     }
   }
 }
