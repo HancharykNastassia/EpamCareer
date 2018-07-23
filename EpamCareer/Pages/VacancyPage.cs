@@ -1,6 +1,7 @@
 ﻿using EpamCareer.Core;
 using EpamCareer.PageObjects;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,19 +32,14 @@ namespace EpamCareer.Pages
 
     private void GetResults()
     {
+      WebDriverWait wait = new WebDriverWait(Browser.Instance.Driver, TimeSpan.FromSeconds(10));
+      wait.Until(driver => driver.FindElement(By.TagName("article")));
       var results = Browser.Instance.Driver.FindElements(By.TagName("article"));
-      if (!results.Any())
+      SearchResults = new List<Record>();
+      foreach (var result in results)
       {
-        throw new Exception("There are no records found with such filters");
+        SearchResults.Add(new Record(result));
       }
-      else
-      {
-        SearchResults = new List<Record>();
-        foreach (var result in results)
-        {
-          SearchResults.Add(new Record(result));
-        }
-      }
-    }
+    }  
   }
 }
