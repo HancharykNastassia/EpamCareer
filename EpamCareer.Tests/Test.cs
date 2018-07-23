@@ -21,7 +21,7 @@ namespace EpamCareer.Tests
     public void TestVacancySearch()
     {
       VacancyPage vacancyPage = startPage.OpenVacancies();
-      vacancyPage.PerformSearch("Java Developer", "Беларусь", "Минск", "Разработка");
+      vacancyPage.PerformSearch("AAA", "Беларусь", "Минск", "Разработка");
       var isAnyExtra = vacancyPage.IsAnyExtra("Java Developer", "MINSK, BELARUS МИНСК, БЕЛАРУСЬ");
       Assert.IsFalse(isAnyExtra, "There are some extra items found");
     }
