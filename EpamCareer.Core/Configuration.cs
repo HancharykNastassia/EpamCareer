@@ -8,6 +8,8 @@ namespace EpamCareer.Core
 
     public static string Timeout => GetConfirurationParameter("Timeout", "30");
 
+    public static string ElementTimeOut => GetConfirurationParameter("ElementTimeout", "10");
+
     public static string GetConfirurationParameter(string parameter, string defaultValue)
     {
       return ConfigurationManager.AppSettings[parameter] ?? defaultValue;

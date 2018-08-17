@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 
 namespace EpamCareer.Core
@@ -37,6 +38,12 @@ namespace EpamCareer.Core
     {
       Instance.Driver.Quit();
       currentInstance = null;
+    }
+
+    public static void WaitFor(By locator)
+    {
+      var wait = new WebDriverWait(Instance.Driver, TimeSpan.FromSeconds(Int32.Parse(Configuration.ElementTimeOut)));
+      wait.Until(ExpectedConditions.ElementExists(locator));
     }
   }
 }

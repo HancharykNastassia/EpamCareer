@@ -32,8 +32,7 @@ namespace EpamCareer.Pages
 
     private void GetResults()
     {
-      WebDriverWait wait = new WebDriverWait(Browser.Instance.Driver, TimeSpan.FromSeconds(10));
-      wait.Until(driver => driver.FindElement(By.TagName("article")));
+      Browser.WaitFor(By.TagName("article"));
       var results = Browser.Instance.Driver.FindElements(By.TagName("article"));
       SearchResults = new List<Record>();
       foreach (var result in results)
